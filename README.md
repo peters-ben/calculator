@@ -1,2 +1,2 @@
-# calculator
-A simple calculator.
+## Calculator
+A simple four function calculator.
