@@ -31,28 +31,34 @@ void main() {
 	cout << "Choose an operation" << endl << endl; // output choices
 	cout << "A - Add      S - Subtract" << endl;
 	cout << "M - Multiply D - Divide" << endl;
-	cout << "X - Exit" << endl;
+	cout << "P - Power    X - Exit" << endl;
 	cout << "Enter option here: ";
-	cin >> option; // get chocie from user
+	cin >> option; // get choice from user
 	while (toupper(option) != 'X') {
 		cout << "Enter first number: ";
 		cin >> num1;
-		cout << "Enter second number: ";
+		if (toupper(option) == 'P')
+			cout << "Enter power (decimal for roots): ";
+		else 
+			cout << "Enter second number: ";
 		cin >> num2;
 		switch (toupper(option)) {
-		case 'A':
+		case 'A': // if user chooses A
 			cout << "Answer: " << add(num1, num2);
 			break;
-		case 'S':
+		case 'S': // if user chooses S
 			cout << "Answer: " << subtract(num1, num2);
 			break;
-		case 'M':
+		case 'M': // if user chooses M
 			cout << "Answer: " << multiply(num1, num2);
 			break;
-		case 'D':
+		case 'D': // if user chooses D
 			cout << "Answer: " << divide(num1, num2);
 			break;
-		default:
+		case 'P': // if user chooses P
+			cout << "Answer: " << pow(num1, num2);
+			break;
+		default: // if user enteres invalid choice
 			cout << "Invalid operation! Try again!" << endl;
 			break;
 		}
